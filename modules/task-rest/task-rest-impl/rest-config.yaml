@@ -1,0 +1,9 @@
+apiDir: "../task-rest-api/src/main/java"
+apiPackagePath: "task.rest"
+application:
+    baseURI: "/task-rest"
+    className: "TaskRestApplication"
+    name: "TaskRest"
+author: "me"
+clientDir: "../task-rest-client/src/main/java"
+testDir: "../task-rest-test/src/testIntegration/java"

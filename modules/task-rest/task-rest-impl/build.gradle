@@ -1,0 +1,8 @@
+dependencies {
+	api project(":modules:task-rest:task-rest-api")
+	compileOnly project(":modules:meu-projeto:meu-projeto-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+group = "task.rest"

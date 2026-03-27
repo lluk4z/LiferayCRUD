@@ -1,0 +1,109 @@
+openapi: 3.0.1
+info:
+  license:
+        name: "Apache 2.0"
+        url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  title: Task API
+  version: v1.0
+
+paths:
+  /tasks:
+    get:
+      operationId: getTasks
+      tags: ["Task"]
+      responses:
+        200:
+          description: List all tasks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Task"
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Task"
+  /public-tasks:
+    get:
+      operationId: getPublicTasks
+      tags:
+        - Task
+      responses:
+        200:
+          description: Public tasks list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task"
+    post:
+      operationId: postTask
+      tags: ["Task"]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Task"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/Task"
+      responses:
+        200:
+          description: Task created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Task"
+
+  /tasks/{taskId}:
+    get:
+      operationId: getTask
+      tags: ["Task"]
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Task found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Task"
+
+    delete:
+      operationId: deleteTask
+      tags: ["Task"]
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        204:
+          description: Deleted successfully
+
+components:
+  schemas:
+    Task:
+      type: object
+      properties:
+        taskId:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        completed:
+          type: boolean

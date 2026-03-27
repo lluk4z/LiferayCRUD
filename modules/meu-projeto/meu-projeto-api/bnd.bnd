@@ -1,0 +1,10 @@
+Bundle-Name: meu-projeto-api
+Bundle-SymbolicName: br.com.exemplo.meuprojeto.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	br.com.exemplo.meuprojeto.exception,\
+	br.com.exemplo.meuprojeto.model,\
+	br.com.exemplo.meuprojeto.service,\
+	br.com.exemplo.meuprojeto.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../meu-projeto-service/service.xml

@@ -1,0 +1,6 @@
+Bundle-Name: task-rest-api
+Bundle-SymbolicName: task.rest.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	task.rest.dto.v1_0,\
+	task.rest.resource.v1_0

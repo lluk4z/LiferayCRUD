@@ -1,0 +1,3 @@
+Bundle-Name: task-rest-impl
+Bundle-SymbolicName: task.rest.impl
+Bundle-Version: 1.0.0
